@@ -104,6 +104,7 @@ main {
     padding-top: 60px;
     transition: left 0.3s;
     z-index: 1700;
+    overflow-y: auto; /* ← これを追加 */
 }
 .sidebar-drawer.open {
     left: 0;
