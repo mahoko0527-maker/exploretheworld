@@ -156,10 +156,10 @@ footer {
     color: #666;
     margin-top: 120px;
 }
-
+    
 /* styles.css に追加・修正 */
 .toggle-list {
-    width: 100%;
+    width: 100%;    
     border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 .toggle-btn {
@@ -173,20 +173,21 @@ footer {
     font-weight: bold;
     cursor: pointer;
     outline: none;
-    border-radius: 6px 6px 0 0;
+    border-radius: 0 0 0 0;
     transition: background 0.2s;
-    display: flex;
+    display: flex;  
     align-items: center;
     justify-content: space-between;
 }
 .toggle-btn:hover, .toggle-list.open .toggle-btn {
-    background: rgba(255,255,255,0.18);
-    color: #ffe082;
+    background: orange;
+    color: blue;
 }
+
 .toggle-btn::after {
-    content: '▼';
-    font-size: 0.9em;
+    content: '✈';         /* 右側に飛行機 */
     margin-left: 8px;
+    font-size: 1em;
     transition: transform 0.3s;
 }
 .toggle-list.open .toggle-btn::after {
@@ -194,11 +195,11 @@ footer {
 }
 .toggle-content {
     display: none;
-    background: #217dbb;
+    background: white;
     margin: 0;
-    padding: 0 0 8px 32px;
+    padding: 0 0 0 32px;
     list-style: none;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 0 0;
 }
 .toggle-list.open .toggle-content {
     display: block;
@@ -207,16 +208,37 @@ footer {
 .toggle-content li a {
     padding: 10px 0;
     display: block;
-    color: #fff;
+    color: blue;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 0 0 0 0;
     transition: background 0.2s;
 }
 .toggle-content li a:hover {
-    background: #3498db;
-    color: #ffe082;
+    background: blue;
+    color: orange;
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-8px);}
     to { opacity: 1; transform: translateY(0);}
+}
+
+/* 目立つボタン風リンク */
+.highlight-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, blue 40%, darkblue 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.8em 2em;
+    border-radius: 5px; /* ← 角丸を小さく */
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(255, 152, 0, 0.2);
+    transition: transform 0.15s, box-shadow 0.15s;
+    margin-bottom: 1em;
+}
+.highlight-btn:hover, .highlight-btn:focus {
+    transform: scale(1.07);
+    box-shadow: 0 6px 24px rgba(255, 87, 34, 0.25);
+    color: blue;
+    background: linear-gradient(90deg, orange 100%);
 }
