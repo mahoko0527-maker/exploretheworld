@@ -104,7 +104,7 @@ main {
     padding-top: 60px;
     transition: left 0.3s;
     z-index: 1700;
-    overflow-y: auto; /* ← これを追加 */
+    overflow-y: auto; /* 内容が多い場合にスクロール可能に */    
 }
 .sidebar-drawer.open {
     left: 0;
@@ -134,7 +134,7 @@ main {
 body {
     font-size: 18px;
     line-height: 1.6;
-    color: #333;
+    color: blue;
     background: #f9f9f9;
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -184,7 +184,7 @@ footer {
     background: orange;
     color: blue;
 }
-
+    
 .toggle-btn::after {
     content: '✈';         /* 右側に飛行機 */
     margin-left: 8px;
@@ -242,4 +242,12 @@ footer {
     box-shadow: 0 6px 24px rgba(255, 87, 34, 0.25);
     color: blue;
     background: linear-gradient(90deg, orange 100%);
+}    
+
+#japan-map path {
+    cursor: pointer;
+    pointer-events: visiblePainted;
+}
+#japan-map path:hover {
+    fill: orange; /* ホバー色 */
 }
