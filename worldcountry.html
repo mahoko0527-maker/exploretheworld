@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Page</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- ハンバーガーメニュー -->
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く">
+        <span></span>
+    </button>
+    <!-- サイドバー -->
+    <nav class="sidebar-drawer" id="sidebarDrawer">
+        <a href="index.html">Back to HOME</a>
+        <a href="trip.html">join our trip</a>
+        <div class="toggle-list">
+            <button class="toggle-btn">track the travel log</button>
+            <ul class="toggle-content">
+                <li><a href="japaneseprefectures.html">&nbsp;47</a></li>
+                <li><a href="world.html">&nbsp;197+α</a></li>
+                <li><a href="baseball.html">&nbsp;12</a></li>
+            </ul>
+        </div>
+        <div class="toggle-list">
+            <button class="toggle-btn">plan upcoming trips</button>
+            <ul class="toggle-content">
+                <li><a href="#">47</a></li>
+                <li><a href="#">197+α</a></li>
+                <li><a href="#">12</a></li>
+            </ul>
+        </div>  
+        <div class="toggle-list">
+            <button class="toggle-btn">my essentials</button>
+            <ul class="toggle-content">
+                <li><a href="#">bags</a></li>
+                <li><a href="#">necessities</a></li>
+                <li><a href="#">extra</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <header>
+        <h1>Explore the World</h1>
+    </header>
+    <main>
+     <section id="JapanesePrefectures">
+        <h2>Japanese Prefectures</h2>
+            <p>Explore the unique culture and attractions of each of Japan's 47 prefectures.</p>
+     </section>
+     <section class="visited-map">
+        <h2 data-lang="visited-title">My visited prefectures</h2>
+            <object type="image/svg+xml" data="world.svg" id="world-map" style="width:100vw; height:auto; display:block; margin:0 auto;"></object>
+     </section>
+     <section class="prefecture-list">
+        <h2 data-lang="prefecture-list-title">Prefecture List</h2>
+        <ul>
+            <li><a href="hokkaido.html"><span style="color: orange;">Hokkaido</span></a></li>
+            <li><a href="aomori.html">Aomori</a></li>
+            <li><a href="iwate.html">Iwate</a></li>
+            <li><a href="miyagi.html">Miyagi</a></li>
+            <li><a href="akita.html">Akita</a></li>
+            <li><a href="yamagata.html">Yamagata</a></li>
+            <li><a href="fukushima.html">Fukushima</a></li>
+            <li><a href="ibaraki.html">Ibaraki</a></li>
+            <li><a href="tochigi.html">Tochigi</a></li>
+            <li><a href="gunma.html">Gunma</a></li>
+            <li><a href="saitama.html">Saitama</a></li>
+            <li><a href="chiba.html">Chiba</a></li>
+            <li><a href="tokyo.html">Tokyo</a></li>
+            <li><a href="kanagawa.html">Kanagawa</a></li>
+            <li><a href="niigata.html">Niigata</a></li>
+            <li><a href="toyama.html">Toyama</a></li>
+            <li><a href="ishikawa.html"><span style="color: orange;">Ishikawa</span></a></li>
+            <li><a href="fukui.html">Fukui</a></li>
+            <li><a href="yamanashi.html">Yamanashi</a></li>
+            <li><a href="nagano.html">Nagano</a></li>
+            <li><a href="gifu.html">Gifu</a></li>
+            <li><a href="shizuoka.html">Shizuoka</a></li>
+            <li><a href="aichi.html"><span style="color: orange;">Aichi</span></a></li>
+            <li><a href="mie.html">Mie</a></li>
+            <li><a href="shiga.html">Shiga</a></li>
+            <li><a href="kyoto.html">Kyoto</a></li>
+            <li><a href="osaka.html"><span style="color: orange;">Osaka</span></a></li>
+            <li><a href="hyogo.html">Hyogo</a></li>
+            <li><a href="nara.html">Nara</a></li>
+            <li><a href="wakayama.html">Wakayama</a></li>
+            <li><a href="tottori.html">Tottori</a></li>
+            <li><a href="shimane.html"><span style="color: orange;">Shimane</span></a></li>
+            <li><a href="okayama.html"><span style="color: orange;">Okayama</span></a></li>
+            <li><a href="hiroshima.html"><span style="color: orange;">Hiroshima</span></a></li>
+            <li><a href="yamaguchi.html">Yamaguchi</a></li>
+            <li><a href="tokushima.html">Tokushima</a></li>
+            <li><a href="kagawa.html">Kagawa</a></li>
+            <li><a href="ehime.html">Ehime</a></li>
+            <li><a href="kochi.html">Kochi</a></li>
+            <li><a href="fukuoka.html"><span style="color: orange;">Fukuoka</span></a></li>
+            <li><a href="saga.html">Saga</a></li>
+            <li><a href="nagasaki.html">Nagasaki</a></li>
+            <li><a href="kumamoto.html"><span style="color: orange;">Kumamoto</span></a></li>
+            <li><a href="oita.html">Oita</a></li>
+            <li><a href="miyazaki.html">Miyazaki</a></li>
+            <li><a href="kagoshima.html">Kagoshima</a></li>
+            <li><a href="okinawa.html"><span style="color: orange;">Okinawa</span></a></li>
+        </ul>
+     </section>
+        </main>
+
+
+    <footer>
+        <p>&copy; 2023 Explore the World. All rights reserved.</p>
+    </footer>
+    
+    <script src="trip.js"></script>
+    <script src="japan-map.js"></script>
+</body>
+</html>

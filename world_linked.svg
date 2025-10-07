@@ -1,0 +1,2757 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+  width="1000"
+  height="500"
+  viewBox="0 0 1000 500"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  version="1.0"
+  id="svg1926"
+  sodipodi:version="0.32"
+  inkscape:version="0.48.4 r9939"
+  sodipodi:docname="BlankMap-FlatWorld6.svg"
+  inkscape:output_extension="org.inkscape.output.svg.inkscape"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <sodipodi:namedview inkscape:window-height="1138" inkscape:window-width="1920" inkscape:pageshadow="2" inkscape:pageopacity="0.0" guidetolerance="10.0" gridtolerance="10.0" objecttolerance="10.0" borderopacity="1.0" bordercolor="#666666" pagecolor="#ffffff" id="base" inkscape:zoom="0.50614469" inkscape:cx="1477.3295" inkscape:cy="789.89681" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:current-layer="svg1926" showgrid="false" inkscape:window-maximized="1"/>
+  <metadata id="metadata24111">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:title>Blank World Map</dc:title>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs1930"/>
+  <style type="text/css" id="style_css_sheet">
+
+ * Below are Cascading Style Sheet (CSS) definitions in use in this file,
+ * which allow easily changing how countries are displayed.
+ *
+ */
+
+/*
+ * Circles around small countries
+ *
+ * Change opacity to 1 to display all circles.
+ *
+ */
+
+
+
+circle
+{
+   opacity:0;
+   fill:#b9b9b9;
+   fill-opacity:1;
+   stroke:black;
+   stroke-width:0.99986893;
+   stroke-miterlimit:3.97446823;
+   stroke-dasharray:none;
+   stroke-opacity:1;
+}
+
+/*
+ * Land
+ */
+.land
+{
+   fill: white;
+   fill-opacity: 1;
+   stroke: blue;
+   stroke-opacity: 1;
+   stroke-width:3;
+   stroke-miterlimit: 3.97446823;
+   stroke-dasharray: none;
+}
+
+.ocean
+{
+   opacity: 1;
+   color: #000000;
+   fill:white;
+   fill-opacity:1;
+   fill-rule:nonzero;
+   stroke:#000000;
+   stroke-width:3;
+   stroke-linecap:butt;
+   stroke-linejoin:miter;
+   marker:none;
+   marker-start:none;
+   marker-mid:none;
+   marker-end:none;
+   stroke-miterlimit:1;
+   stroke-dasharray:none;
+   stroke-dashoffset:0;
+   stroke-opacity:1;
+   visibility:visible;
+   display:inline;
+   overflow:visible;
+}
+
+.lake
+{
+   fill:#ffffff;
+   fill-opacity:1;
+   stroke:#ffffff;
+   stroke-opacity:1;
+   stroke-width:0.99986997;
+   stroke-miterlimit:3.97446823;
+   stroke-dasharray:none;
+}
+</style>
+  
+  
+  
+  
+  <g class="land fr" id="fr">
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  
+  <g class="land id" id="id">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ye" id="ye">
+    
+    
+    
+    
+  </g>
+  <g class="land mg" id="mg">
+    
+    
+    
+  </g>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <g class="land tw" id="tw">
+    
+    
+  </g>
+  
+  <g class="land mx" id="mx">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ae" id="ae">
+    
+    
+  </g>
+  <g class="land bz" id="bz">
+    
+    
+  </g>
+  <g class="land br" id="br">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land sl" id="sl">
+    
+    
+  </g>
+  
+  
+  <g class="land it" id="it">
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  <g class="land bd" id="bd">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land do" id="do">
+    
+    
+  </g>
+  <g class="land gw" id="gw">
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  <g class="land se" id="se">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land tr" id="tr">
+    
+    
+  </g>
+  
+  <g class="land mz" id="mz">
+    
+    
+    
+    
+  </g>
+  <g class="land jp" id="jp">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land nz" id="nz">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land cu" id="cu">
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ve" id="ve">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land pt" id="pt">
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  <g class="land mr" id="mr">
+    
+    
+  </g>
+  <g class="land ao" id="ao">
+    
+    
+  </g>
+  <g class="land de" id="de">
+    
+    
+    
+    
+    
+  </g>
+  
+  <g class="land th" id="th">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land au" id="au">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land pg" id="pg">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  <g class="land hr" id="hr">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land gl" id="gl">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <g id="g27049">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </g>
+  </g>
+  
+  <g class="land dk" id="dk">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  
+  <g class="land ir" id="ir">
+    
+    
+    
+    
+  </g>
+  <g class="land mm" id="mm">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  
+  
+  
+  
+  
+  <g class="land fi" id="fi">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  <g class="land sb" id="sb">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land om" id="om">
+    
+    
+    
+  </g>
+  <g class="land pa" id="pa">
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ar" id="ar">
+    
+    
+    
+    
+    
+  </g>
+  <g class="land gb" id="gb">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  <g class="land gn" id="gn">
+    
+    
+  </g>
+  <g class="land ie" id="ie">
+    
+    
+    
+  </g>
+  <g class="land ng" id="ng">
+    
+    
+    
+  </g>
+  <g class="land tn" id="tn">
+    
+    
+  </g>
+  
+  
+  
+  
+  <g class="land tz" id="tz">
+    
+    
+    
+    
+  </g>
+  
+  <g class="land sa" id="sa">
+    
+    
+    
+    
+    
+  </g>
+  <g class="land vn" id="vn">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ru" id="ru">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ht" id="ht">
+    
+    
+    
+    
+  </g>
+  
+  <g class="land in" id="in">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land cn" id="cn">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ca" id="ca">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  
+  <g class="land gq" id="gq">
+    
+    
+  </g>
+  
+  
+  
+  
+  <g class="land az" id="az">
+    
+    
+  </g>
+  <g class="land my" id="my">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ph" id="ph">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  <g id="rs">
+    
+    
+  </g>
+  <g id="me">
+    
+    
+  </g>
+  <g class="land ee" id="ee">
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  
+  
+  <g class="land es" id="es">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land ga" id="ga">
+    
+    
+  </g>
+  
+  
+  
+  <g class="land kh" id="kh">
+    
+    
+    
+    
+  </g>
+  <g class="land kr" id="kr">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land hn" id="hn">
+    
+    
+  </g>
+  
+  
+  <g class="land cl" id="cl">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  <g class="land nl" id="nl">
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  
+  
+  <g class="land lk" id="lk">
+    
+    
+    
+  </g>
+  
+  
+  
+  <g class="land gr" id="gr">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  <g class="land ec" id="ec">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  
+  <g class="land no" id="no">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  <g id="lb">
+    
+    
+  </g>
+  
+  <g class="land er" id="er">
+    
+    
+  </g>
+  <g class="land us" id="us">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land kz" id="kz">
+    
+    
+  </g>
+  <g class="lake" id="lakes">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g class="land aq" id="aq">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  
+  <g class="land uz" id="uz">
+    
+    
+  </g>
+  
+  
+  <g id="nc">
+    <g class="land nc" id="nc-">
+      
+      
+      
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="fj">
+    <g class="land fj" id="fj-">
+      
+      
+      
+      
+      
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="kw">
+    <g class="land kw" id="kw-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="tl">
+    <g class="land tl" id="tl-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="bs">
+    <g class="land bs" id="bs-">
+      
+      <g id="g20657">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </g>
+    </g>
+    
+  </g>
+  <g id="vu">
+    <g class="land vu" id="vu-">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="fk">
+    <g class="land fk" id="fk-">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="gm">
+    
+    
+  </g>
+  <g id="qa">
+    
+    
+  </g>
+  <g id="jm">
+    
+    
+  </g>
+  <g id="cy">
+    
+    
+  </g>
+  <g id="pr">
+    
+    
+  </g>
+  <g id="ps">
+    <g class="land ps" id="ps-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="bn">
+    <g class="land bn" id="bn-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="tt">
+    <g class="land tt" id="tt-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="cv">
+    <g class="land cv" id="cv-">
+      
+      
+      
+      
+      
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="pf">
+    <g class="land pf" id="pf-">
+      
+      
+      
+      
+      
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="ws">
+    <g class="land ws" id="ws-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="lu">
+    
+    
+  </g>
+  <g id="re">
+    
+    
+  </g>
+  <g id="km">
+    <g class="land km" id="km-">
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="mu">
+    
+    
+  </g>
+  <g id="fo">
+    <g class="land fo" id="fo-">
+      
+      
+      
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="mq">
+    
+    
+  </g>
+  <g id="st">
+    <g class="land st" id="st-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="an">
+    <g class="land an" id="an-">
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="dm">
+    
+    
+  </g>
+  <g id="gp">
+    <g class="land gp" id="gp-">
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="to">
+    <g class="land to" id="to-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="ki">
+    <g class="land ki" id="ki-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="fm">
+    
+    
+  </g>
+  <g id="bh">
+    
+    
+  </g>
+  <g id="ad">
+    
+    
+  </g>
+  <g id="mp">
+    
+    
+  </g>
+  <g id="pw">
+    
+    
+  </g>
+  <g id="sc">
+    
+    
+  </g>
+  <g id="ag">
+    <g class="land ag" id="ag-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="bb">
+    
+    
+  </g>
+  <g id="tc">
+    <g class="land tc" id="tc-">
+      
+      
+      
+    </g>
+    
+  </g>
+  <g id="vc">
+    
+    
+  </g>
+  <g id="lc">
+    
+    
+  </g>
+  <g id="yt">
+    
+    
+  </g>
+  <g id="vi">
+    <g class="land vi" id="vi-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="gd">
+    
+    
+  </g>
+  <g id="mt">
+    
+    
+  </g>
+  <g id="mv">
+    
+    
+  </g>
+  <g id="ky">
+    
+    
+  </g>
+  <g id="kn">
+    <g class="land kn" id="kn-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="ms">
+    
+    
+  </g>
+  <g id="nu">
+    
+    
+  </g>
+  <g id="pm">
+    
+    
+  </g>
+  <g id="ck">
+    <g class="land ck" id="ck-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="wf">
+    
+    
+  </g>
+  <g id="as">
+    
+    
+  </g>
+  <g id="mh">
+    
+    
+  </g>
+  <g id="aw">
+    
+    
+  </g>
+  <g id="li">
+    
+    
+  </g>
+  <g id="vg">
+    <g class="land vg" id="vg-">
+      
+      
+    </g>
+    
+  </g>
+  <g id="sh">
+    
+    
+  </g>
+  <g id="je">
+    
+    
+  </g>
+  <g id="ai">
+    
+    
+  </g>
+  <g id="gg">
+    
+    
+  </g>
+  <g id="sm">
+    
+    
+  </g>
+  <g id="bm">
+    
+    
+  </g>
+  <g id="tv">
+    
+    
+  </g>
+  <g id="nr">
+    
+    
+  </g>
+  <g id="gi">
+    
+    
+  </g>
+  <g id="pn">
+    
+    
+  </g>
+  <g id="mc">
+    
+    
+  </g>
+  <g id="va">
+    
+    
+  </g>
+  <g id="im">
+    
+    
+  </g>
+  <g id="gu">
+    
+    
+  </g>
+  <g id="sg">
+    
+    
+  </g>
+  
+</svg>
