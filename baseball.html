@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Page</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- ハンバーガーメニュー -->
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く">
+        <span></span>
+    </button>
+    <!-- サイドバー -->
+    <nav class="sidebar-drawer" id="sidebarDrawer">
+        <a href="index.html">Back to HOME</a>
+        <a href="trip.html">join our trip</a>
+        <div class="toggle-list">
+            <button class="toggle-btn">track the travel log</button>
+            <ul class="toggle-content">
+                <li><a href="japaneseprefectures.html">&nbsp;47</a></li>
+                <li><a href="world.html">&nbsp;197+α</a></li>
+                <li><a href="baseball.html">&nbsp;12</a></li>
+            </ul>
+        </div>
+        <div class="toggle-list">
+            <button class="toggle-btn">plan upcoming trips</button>
+            <ul class="toggle-content">
+                <li><a href="japaneseprefectures.html">47</a></li>
+                <li><a href="worldcountry.html">197+α</a></li>
+                <li><a href="baseball.html">12</a></li>
+            </ul>
+        </div>  
+        <div class="toggle-list">
+            <button class="toggle-btn">my essentials</button>
+            <ul class="toggle-content">
+                <li><a href="#">bags</a></li>
+                <li><a href="#">necessities</a></li>
+                <li><a href="#">extra</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <header>
+        <h1>Explore the World</h1>
+    </header>
+    <main>
+     <section id="JapanesePrefectures">
+        <h2>Japanese Prefectures</h2>
+            <p>Explore the unique culture and attractions of each of Japan's 47 prefectures.</p>
+     </section>
+     <section class="visited-map">
+        <h2 data-lang="visited-title">My visited prefectures</h2>
+            <object type="image/svg+xml" data="japan-linked - Copy.svg" id="japanBaseball-map" style="width:100vw; height:auto; display:block; margin:0 auto;"></object>
+     </section>
+     <section class="baseballpark-list">
+        <h2 data-lang="baseballpark-list-title">Baseball Park List</h2>
+        <ul>
+            <li><a href="tokyodome.html"><span style="color: orange;"></span>Tokyo Dome</a></li>
+            <li><a href="jingu.html"><span style="color: orange;"></span>Meji Jingu Stadium</a></li>
+            <li><a href="hamasuta.html"><span style="color: orange;"></span>Yokotama Stadium</a></li>
+            <li><a href="nagoyadome.html"><span style="color: orange;"></span>Vantelin Dome Nagoya</a></li>
+            <li><a href="koushien.html">Hanshin Koshien Stadium</a></li>
+            <li><a href="zumusuta.html">MAZDA Zoom-Zoom Stdaium Hiroshima</a></li>
+            <li><a href="escon.html">ES CON Field HOKKAIDO</span></a></li>
+            <li><a href="rakten.html">Rakuten Mobile Park Miyagi</a></li>
+            <li><a href="zozomarin.html">ZOZO Marine Stadium</a></li>
+            <li><a href="belluna.html">belluna Dome</a></li>
+            <li><a href="kyocera.html">Kyocera Dome Osaka</a></li>
+            <li><a href="paypay.html"><span style="color: orange;"></span>Mizuho PayPay Dome Fukuoka</a></li>
+        </ul>
+     </section>
+        </main>
+
+
+    <footer>
+        <p>&copy; 2023 Explore the World. All rights reserved.</p>
+    </footer>
+    
+    <script src="trip.js"></script>
+    <script src="japan-map.js"></script>
+</body>
+</html>
