@@ -554,4 +554,34 @@ footer {
         margin-right: auto;
         font-size: 1.05rem;
     }
+
+    .upcoming-trip-intro,
+    .upcoming-trip-app,
+    .roulette-panel {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .roulette-shell {
+        padding: 16px;
+    }
+
+    .roulette-label,
+    .roulette-subcopy {
+        text-align: center;
+    }
+
+    .roulette-display {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .roulette-actions {
+        justify-content: center;
+    }
+
+    .roulette-value {
+        font-size: clamp(1.5rem, 8vw, 2.2rem);
+        letter-spacing: 0.04em;
+    }
 }

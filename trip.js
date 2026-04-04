@@ -314,10 +314,9 @@ window.addEventListener('DOMContentLoaded', function() {
   function renderRouletteSystem(onPick) {
     const rouletteValue = document.querySelector('[data-roulette-value]');
     const rouletteSubcopy = document.querySelector('[data-roulette-subcopy]');
-    const startButton = document.querySelector('[data-roulette-start]');
-    const stopButton = document.querySelector('[data-roulette-stop]');
+    const toggleButton = document.querySelector('[data-roulette-toggle]');
 
-    if (!rouletteValue || !rouletteSubcopy || !startButton || !stopButton) {
+    if (!rouletteValue || !rouletteSubcopy || !toggleButton) {
       return;
     }
 
@@ -326,8 +325,8 @@ window.addEventListener('DOMContentLoaded', function() {
     let currentValue = rouletteValue.textContent.trim() || PREFECTURES[0];
 
     const setActiveState = isRunning => {
-      startButton.disabled = isRunning;
-      stopButton.disabled = !isRunning;
+      toggleButton.textContent = isRunning ? 'STOP' : 'START';
+      toggleButton.setAttribute('aria-pressed', isRunning ? 'true' : 'false');
       rouletteSubcopy.textContent = isRunning
         ? 'Scanning prefectures...'
         : 'Ready to lock a destination.';
@@ -339,18 +338,11 @@ window.addEventListener('DOMContentLoaded', function() {
       rouletteValue.textContent = currentValue;
     };
 
-    startButton.addEventListener('click', () => {
-      if (rouletteTimer) {
-        return;
-      }
-
-      currentIndex = Math.max(PREFECTURES.indexOf(currentValue), 0);
-      setActiveState(true);
-      rouletteTimer = window.setInterval(advance, 22);
-    });
-
-    stopButton.addEventListener('click', () => {
+    toggleButton.addEventListener('click', () => {
       if (!rouletteTimer) {
+        currentIndex = Math.max(PREFECTURES.indexOf(currentValue), 0);
+        setActiveState(true);
+        rouletteTimer = window.setInterval(advance, 22);
         return;
       }
 
