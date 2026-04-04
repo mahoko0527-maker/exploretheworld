@@ -1,0 +1,92 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Trip Ideas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="splash">
+        <span class="splash-text">EtW <span class="airplane">✈</span></span>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く">
+        <span></span>
+    </button>
+    <nav class="sidebar-drawer" id="sidebarDrawer">
+        <a href="index.html">Back to HOME</a>
+        <a href="trip.html">join our trip</a>
+        <a href="japaneseprefectures.html">47 prefectures</a>
+    </nav>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <header>
+        <h1>Upcoming Trip Ideas</h1>
+    </header>
+    <main>
+        <section class="upcoming-trip-intro">
+            <h2>Pick a prefecture</h2>
+            <p>都道府県を選ぶと、みんなが投稿した観光アイデアとランダム候補を見られます。</p>
+        </section>
+        <section class="roulette-panel" aria-label="Prefecture roulette">
+            <div class="roulette-shell">
+                <p class="roulette-label">SYSTEM / PREFECTURE ROULETTE</p>
+                <div class="roulette-display" aria-live="polite">
+                    <span class="roulette-cursor">■</span>
+                    <span class="roulette-value" data-roulette-value>Hokkaido</span>
+                </div>
+                <p class="roulette-subcopy" data-roulette-subcopy>Start the system to decide the next destination.</p>
+                <div class="roulette-actions">
+                    <button type="button" class="highlight-btn roulette-btn" data-roulette-start>START</button>
+                    <button type="button" class="highlight-btn roulette-btn" data-roulette-stop disabled>STOP</button>
+                    <a class="highlight-btn roulette-btn" href="#upcoming-trip-app">POST / SHUFFLE</a>
+                </div>
+            </div>
+        </section>
+        <section id="upcoming-trip-app" class="upcoming-trip-app">
+            <div class="trip-toolbar">
+                <label for="prefecture-select">Prefecture</label>
+                <select id="prefecture-select" data-prefecture-select></select>
+                <button type="button" class="highlight-btn" data-randomize>SHUFFLE</button>
+            </div>
+            <div class="trip-grid">
+                <section>
+                    <h2>Random pick</h2>
+                    <div data-random-slot></div>
+                </section>
+                <section>
+                    <h2>All ideas</h2>
+                    <div class="trip-list" data-list-slot></div>
+                </section>
+            </div>
+            <section class="trip-form-panel">
+                <h2>Post your idea</h2>
+                <p>別タブで投稿して、そのまま localStorage に保存します。</p>
+                <form class="trip-form">
+                    <label>
+                        Post prefecture
+                        <select name="prefecture" data-form-prefecture></select>
+                    </label>
+                    <label>
+                        Title
+                        <input type="text" name="title" placeholder="例: 朝市と海辺の散歩" required>
+                    </label>
+                    <label>
+                        Description
+                        <textarea name="description" rows="4" placeholder="例: 朝早く出て、海の近くで朝ごはんを楽しむ" required></textarea>
+                    </label>
+                    <label>
+                        Author
+                        <input type="text" name="author" placeholder="任意">
+                    </label>
+                    <button type="submit" class="highlight-btn">投稿する</button>
+                    <p class="trip-status" data-status></p>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Explore the World. All rights reserved.</p>
+    </footer>
+    <script src="trip.js"></script>
+</body>
+</html>
