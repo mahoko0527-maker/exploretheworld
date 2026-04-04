@@ -146,15 +146,7 @@ main {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.2);
-    body {
-        font-size: 18px;
-        line-height: 1.6;
-        color: blue;
-        background: #f9f9f9;
-        margin: 0;
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-        font-weight: 400;
-    }    z-index: 1650;
+    z-index: 1650;
 }
 .sidebar-overlay.open {
     display: block;
@@ -528,4 +520,38 @@ footer {
     color: #0d2fe0;
     transform: none;
     box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+        line-height: 1.2;
+        padding: 16px 56px;
+    }
+
+    .menu-btn {
+        top: 10px;
+        left: 12px;
+    }
+
+    main {
+        margin-top: 92px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    #upcoming-trips {
+        text-align: center;
+    }
+
+    #upcoming-trips .highlight-btn {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.05rem;
+    }
 }
