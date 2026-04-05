@@ -524,14 +524,34 @@ footer {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 28px;
+        font-size: 36px;
         line-height: 1.2;
-        padding: 16px 56px;
+        padding: 18px 72px 18px 64px;
     }
 
     .menu-btn {
         top: 10px;
         left: 12px;
+    }
+
+    .sidebar-drawer {
+        width: 70vw;
+        left: -70vw;
+        padding-top: 72px;
+    }
+
+    .sidebar-drawer a {
+        font-size: 1.25rem;
+        padding: 18px 28px;
+    }
+
+    .toggle-btn {
+        font-size: 1.2rem;
+        padding: 18px 28px;
+    }
+
+    .toggle-content li a {
+        font-size: 1.1rem;
     }
 
     main {
@@ -541,7 +561,26 @@ footer {
     }
 
     body {
-        font-size: 16px;
+        font-size: 20px;
+    }
+
+    .upcoming-trip-intro h2,
+    .upcoming-trip-app h2,
+    .trip-form-panel h2 {
+        font-size: 1.6rem;
+    }
+
+    .upcoming-trip-intro p,
+    .upcoming-trip-app p,
+    .trip-form label,
+    .trip-toolbar label {
+        font-size: 1.15rem;
+    }
+
+    .roulette-btn,
+    .upcoming-trip-app .highlight-btn,
+    .trip-form-panel .highlight-btn {
+        font-size: 1.15rem;
     }
 
     #upcoming-trips {
@@ -581,7 +620,7 @@ footer {
     }
 
     .roulette-value {
-        font-size: clamp(1.5rem, 8vw, 2.2rem);
+        font-size: clamp(2rem, 10vw, 3rem);
         letter-spacing: 0.04em;
     }
 }
