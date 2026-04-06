@@ -522,7 +522,7 @@ footer {
     box-shadow: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
     h1 {
         font-size: 36px;
         line-height: 1.2;
@@ -561,7 +561,24 @@ footer {
     }
 
     body {
-        font-size: 20px;
+        font-size: 22px;
+        line-height: 1.75;
+    }
+
+    main h2 {
+        font-size: 1.9rem;
+        line-height: 1.3;
+    }
+
+    main p,
+    main li,
+    main a {
+        font-size: 1.3rem;
+    }
+
+    footer,
+    footer p {
+        font-size: 1rem;
     }
 
     .upcoming-trip-intro h2,
