@@ -1,7 +1,7 @@
 /* ...existing code... */
 
 :root {
-    --mobile-body-font-size: 20px;
+    --mobile-body-font-size: 1rem;
     --mobile-h2-font-size: 1.6rem;
     --mobile-main-text-size: 1.15rem;
     --mobile-menu-link-size: 1.25rem;
@@ -77,6 +77,16 @@ h1 {
     text-align: center;
     margin: 0;
     padding: 20px 0;
+}
+
+h1 .home-title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 .home-title-link:hover,
+h1 .home-title-link:focus {
+    text-decoration: none;
 }
 
 /* メインコンテンツが題字の下に隠れないように余白を追加 */
@@ -534,7 +544,7 @@ footer {
     box-shadow: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     h1 {
         font-size: 36px;
         line-height: 1.2;
@@ -596,7 +606,7 @@ footer {
     }
 
     #upcoming-trips {
-        text-align: center;
+        text-align: left;
     }
 
     #upcoming-trips .highlight-btn {
