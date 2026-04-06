@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
   const UPCOMING_STORAGE_KEY = 'etw-upcoming-trip-ideas-v1';
+  const TRIP_SYNC_CONFIG = window.ETW_TRIP_SYNC || {};
   const PREFECTURES = [
     'Hokkaido', 'Aomori', 'Iwate', 'Miyagi', 'Akita', 'Yamagata', 'Fukushima',
     'Ibaraki', 'Tochigi', 'Gunma', 'Saitama', 'Chiba', 'Tokyo', 'Kanagawa',
@@ -203,11 +204,108 @@ window.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem(UPCOMING_STORAGE_KEY, JSON.stringify(ideas));
   }
 
+  function getSyncSettings() {
+    const supabaseUrl = String(TRIP_SYNC_CONFIG.supabaseUrl || '').trim();
+    const supabaseAnonKey = String(TRIP_SYNC_CONFIG.supabaseAnonKey || '').trim();
+    const table = String(TRIP_SYNC_CONFIG.table || 'trip_ideas').trim();
+
+    return {
+      supabaseUrl,
+      supabaseAnonKey,
+      table,
+      enabled: Boolean(supabaseUrl && supabaseAnonKey)
+    };
+  }
+
+  function normalizeIdeaPayload(item) {
+    return {
+      id: item.id || item.remote_id || Date.now(),
+      prefecture: normalizePrefectureName(item.prefecture || ''),
+      title: String(item.title || '').trim(),
+      description: String(item.description || '').trim(),
+      author: String(item.author || '').trim(),
+      createdAt: item.createdAt || item.created_at || new Date().toISOString()
+    };
+  }
+
+  let remoteIdeasCache = [];
+
+  function getAllUserIdeas() {
+    return [...remoteIdeasCache, ...getStoredIdeas()];
+  }
+
+  async function loadRemoteIdeas() {
+    const sync = getSyncSettings();
+    if (!sync.enabled) {
+      remoteIdeasCache = [];
+      return [];
+    }
+
+    const endpoint = `${sync.supabaseUrl.replace(/\/$/, '')}/rest/v1/${encodeURIComponent(sync.table)}?select=*`;
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'GET',
+        headers: {
+          apikey: sync.supabaseAnonKey,
+          Authorization: `Bearer ${sync.supabaseAnonKey}`
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to load remote ideas: ${response.status}`);
+      }
+
+      const payload = await response.json();
+      remoteIdeasCache = Array.isArray(payload)
+        ? payload.map(normalizeIdeaPayload).filter(item => item.title && item.description)
+        : [];
+      return remoteIdeasCache;
+    } catch (error) {
+      console.warn('Remote sync unavailable, using local ideas only:', error);
+      remoteIdeasCache = [];
+      return [];
+    }
+  }
+
+  async function pushRemoteIdea(idea) {
+    const sync = getSyncSettings();
+    if (!sync.enabled) {
+      return { ok: false, skipped: true };
+    }
+
+    const endpoint = `${sync.supabaseUrl.replace(/\/$/, '')}/rest/v1/${encodeURIComponent(sync.table)}`;
+    const body = {
+      prefecture: idea.prefecture,
+      title: idea.title,
+      description: idea.description,
+      author: idea.author,
+      created_at: idea.createdAt
+    };
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: sync.supabaseAnonKey,
+        Authorization: `Bearer ${sync.supabaseAnonKey}`,
+        Prefer: 'return=representation'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to save remote idea: ${response.status}`);
+    }
+
+    return { ok: true };
+  }
+
   function getIdeasForPrefecture(prefecture) {
     const label = normalizePrefectureName(prefecture);
     const seeds = PREFECTURE_SEEDS[label] || [];
     const fallback = buildFallbackIdeas(label);
-    const stored = getStoredIdeas().filter(item => normalizePrefectureName(item.prefecture) === label);
+    const stored = getAllUserIdeas().filter(item => normalizePrefectureName(item.prefecture) === label);
     const merged = [...seeds, ...stored, ...fallback];
     const seen = new Set();
 
@@ -296,6 +394,7 @@ window.addEventListener('DOMContentLoaded', function() {
     };
 
     randomButton.addEventListener('click', refresh);
+    window.addEventListener('etw-trip-data-updated', refresh);
     refresh();
   }
 
@@ -409,7 +508,7 @@ window.addEventListener('DOMContentLoaded', function() {
       render();
     });
 
-    form.addEventListener('submit', event => {
+    form.addEventListener('submit', async event => {
       event.preventDefault();
 
       const formData = new FormData(form);
@@ -425,28 +524,47 @@ window.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      const storedIdeas = getStoredIdeas();
-      storedIdeas.unshift({
+      const newIdea = {
         id: Date.now(),
         prefecture,
         title,
         description,
         author,
         createdAt: new Date().toISOString()
-      });
+      };
+
+      const storedIdeas = getStoredIdeas();
+      storedIdeas.unshift(newIdea);
       saveStoredIdeas(storedIdeas);
+
+      let saveMessage = `${prefecture} に投稿を保存しました。`;
+      try {
+        const result = await pushRemoteIdea(newIdea);
+        if (result.ok) {
+          await loadRemoteIdeas();
+          saveMessage = `${prefecture} に投稿を保存しました（端末間で共有されます）。`;
+        }
+      } catch (error) {
+        console.warn('Remote save failed, kept local copy only:', error);
+        saveMessage = `${prefecture} に保存しました（共有サーバーには接続できませんでした）。`;
+      }
+
       form.reset();
       prefectureSelect.value = prefecture;
       formPrefectureSelect.value = prefecture;
 
       if (statusMessage) {
-        statusMessage.textContent = `${prefecture} に投稿を保存しました。`;
+        statusMessage.textContent = saveMessage;
       }
 
       render();
+      window.dispatchEvent(new Event('etw-trip-data-updated'));
     });
 
-    render();
+    loadRemoteIdeas().finally(() => {
+      render();
+      window.dispatchEvent(new Event('etw-trip-data-updated'));
+    });
   }
 
   renderRouletteSystem(selectedPrefecture => {
