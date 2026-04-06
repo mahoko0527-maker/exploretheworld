@@ -268,22 +268,22 @@ footer {
 /* 目立つボタン風リンク */
 .highlight-btn {
     display: inline-block;
-    background: linear-gradient(90deg, blue 40%, darkblue 100%);
-    color: #fff;
+    background: #ffffff;
+    color: #1338ff;
+    border: 2px solid #1338ff;
     font-weight: bold;
     font-size: 1.3rem;
     padding: 0.8em 2em;
-    border-radius: 5px; /* ← 角丸を小さく */
+    border-radius: 8px;
     text-decoration: none;
-    box-shadow: 0 4px 16px rgba(255, 152, 0, 0.2);
-    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: none;
+    transition: background 0.15s, color 0.15s;
     margin-bottom: 1em;
 }
 .highlight-btn:hover, .highlight-btn:focus {
-    transform: scale(1.07);
-    box-shadow: 0 6px 24px rgba(255, 87, 34, 0.25);
-    color: blue;
-    background: linear-gradient(90deg, orange 100%);
+    color: #0d2fe0;
+    background: #f0f5ff;
+    box-shadow: none;
 }    
 
 #japan-map path {
