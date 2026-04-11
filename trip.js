@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', function() {
   const UPCOMING_STORAGE_KEY = 'etw-upcoming-trip-ideas-v1';
+  const CHECKLIST_STORAGE_KEY = 'etw-checklist-state-v1';
   const TRIP_SYNC_CONFIG = window.ETW_TRIP_SYNC || {};
+  const CHECKLIST_SYNC_CONFIG = window.ETW_CHECKLIST_SYNC || {};
   const PREFECTURES = [
     'Hokkaido', 'Aomori', 'Iwate', 'Miyagi', 'Akita', 'Yamagata', 'Fukushima',
     'Ibaraki', 'Tochigi', 'Gunma', 'Saitama', 'Chiba', 'Tokyo', 'Kanagawa',
@@ -301,6 +303,175 @@ window.addEventListener('DOMContentLoaded', function() {
     return { ok: true };
   }
 
+  function getChecklistSyncSettings() {
+    const fallbackUrl = String(TRIP_SYNC_CONFIG.supabaseUrl || '').trim();
+    const fallbackKey = String(TRIP_SYNC_CONFIG.supabaseAnonKey || '').trim();
+    const supabaseUrl = String(CHECKLIST_SYNC_CONFIG.supabaseUrl || fallbackUrl).trim();
+    const supabaseAnonKey = String(CHECKLIST_SYNC_CONFIG.supabaseAnonKey || fallbackKey).trim();
+    const table = String(CHECKLIST_SYNC_CONFIG.table || 'checklist_states').trim();
+
+    return {
+      supabaseUrl,
+      supabaseAnonKey,
+      table,
+      enabled: Boolean(supabaseUrl && supabaseAnonKey)
+    };
+  }
+
+  function getChecklistState() {
+    try {
+      return JSON.parse(localStorage.getItem(CHECKLIST_STORAGE_KEY) || '{}');
+    } catch (error) {
+      console.warn('Failed to read checklist state:', error);
+      return {};
+    }
+  }
+
+  function saveChecklistState(state) {
+    localStorage.setItem(CHECKLIST_STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function toChecklistItemKey(value) {
+    return String(value || '')
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '-');
+  }
+
+  async function loadRemoteChecklist(listId) {
+    const sync = getChecklistSyncSettings();
+    if (!sync.enabled) {
+      return {};
+    }
+
+    const endpoint = `${sync.supabaseUrl.replace(/\/$/, '')}/rest/v1/${encodeURIComponent(sync.table)}?list_id=eq.${encodeURIComponent(listId)}&select=item_key,checked`;
+    const response = await fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        apikey: sync.supabaseAnonKey,
+        Authorization: `Bearer ${sync.supabaseAnonKey}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to load checklist state: ${response.status}`);
+    }
+
+    const payload = await response.json();
+    const map = {};
+    (Array.isArray(payload) ? payload : []).forEach(item => {
+      const key = toChecklistItemKey(item.item_key);
+      map[key] = Boolean(item.checked);
+    });
+
+    return map;
+  }
+
+  async function pushRemoteChecklistItem(listId, itemKey, checked) {
+    const sync = getChecklistSyncSettings();
+    if (!sync.enabled) {
+      return;
+    }
+
+    const endpoint = `${sync.supabaseUrl.replace(/\/$/, '')}/rest/v1/${encodeURIComponent(sync.table)}?on_conflict=list_id,item_key`;
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: sync.supabaseAnonKey,
+        Authorization: `Bearer ${sync.supabaseAnonKey}`,
+        Prefer: 'resolution=merge-duplicates,return=minimal'
+      },
+      body: JSON.stringify([
+        {
+          list_id: listId,
+          item_key: itemKey,
+          checked,
+          updated_at: new Date().toISOString()
+        }
+      ])
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to save checklist state: ${response.status}`);
+    }
+  }
+
+  function renderSyncedChecklists() {
+    const lists = document.querySelectorAll('[data-checklist-id]');
+    if (!lists.length) {
+      return;
+    }
+
+    const allState = getChecklistState();
+
+    lists.forEach(list => {
+      const listId = String(list.getAttribute('data-checklist-id') || '').trim();
+      if (!listId) {
+        return;
+      }
+
+      list.classList.add('checklist-list');
+      const localState = allState[listId] || {};
+
+      const statusNode = document.createElement('p');
+      statusNode.className = 'checklist-sync-status';
+      statusNode.textContent = 'この端末でチェック状態を保存します。';
+      list.insertAdjacentElement('afterend', statusNode);
+
+      list.querySelectorAll('li').forEach((item, index) => {
+        const rawLabel = item.textContent.trim();
+        const itemKey = toChecklistItemKey(item.getAttribute('data-check-key') || rawLabel || `item-${index + 1}`);
+        const checkboxId = `${listId}-${itemKey}`;
+
+        item.classList.add('checklist-item');
+        item.innerHTML = `
+          <label for="${escapeHtml(checkboxId)}">
+            <input type="checkbox" id="${escapeHtml(checkboxId)}" data-check-item="${escapeHtml(itemKey)}">
+            <span>${escapeHtml(rawLabel)}</span>
+          </label>
+        `;
+
+        const input = item.querySelector('input[type="checkbox"]');
+        input.checked = Boolean(localState[itemKey]);
+
+        input.addEventListener('change', async () => {
+          const currentState = getChecklistState();
+          currentState[listId] = currentState[listId] || {};
+          currentState[listId][itemKey] = input.checked;
+          saveChecklistState(currentState);
+
+          statusNode.textContent = '保存しました（この端末）。';
+
+          try {
+            await pushRemoteChecklistItem(listId, itemKey, input.checked);
+            statusNode.textContent = '保存しました（端末間で同期）。';
+          } catch (error) {
+            statusNode.textContent = 'ローカル保存のみ（同期サーバー未接続）。';
+          }
+        });
+      });
+
+      loadRemoteChecklist(listId)
+        .then(remoteState => {
+          const merged = { ...localState, ...remoteState };
+          const latestState = getChecklistState();
+          latestState[listId] = merged;
+          saveChecklistState(latestState);
+
+          list.querySelectorAll('input[data-check-item]').forEach(input => {
+            const key = toChecklistItemKey(input.getAttribute('data-check-item'));
+            input.checked = Boolean(merged[key]);
+          });
+
+          statusNode.textContent = 'チェック状態を同期しました。';
+        })
+        .catch(() => {
+          statusNode.textContent = 'この端末でチェック状態を保存します。';
+        });
+    });
+  }
+
   function getIdeasForPrefecture(prefecture) {
     const label = normalizePrefectureName(prefecture);
     const seeds = PREFECTURE_SEEDS[label] || [];
@@ -585,6 +756,7 @@ window.addEventListener('DOMContentLoaded', function() {
       randomizeButton.textContent = `Randomize ${selectedPrefecture}`;
     }
   });
+  renderSyncedChecklists();
   renderPrefectureWidget();
   renderUpcomingTripApp();
 });

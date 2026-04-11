@@ -544,6 +544,31 @@ footer {
     box-shadow: none;
 }
 
+.checklist-list {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.checklist-item label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checklist-item input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+}
+
+.checklist-sync-status {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #2042c9;
+}
+
 @media (max-width: 900px) {
     h1 {
         font-size: 36px;

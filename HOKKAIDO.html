@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Page</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        window.ETW_CHECKLIST_SYNC = {
+            // Example: 'https://your-project.supabase.co'
+            supabaseUrl: '',
+            // Example: 'eyJ...'
+            supabaseAnonKey: '',
+            table: 'checklist_states'
+        };
+    </script>
     
 </head>
 <body>
@@ -32,7 +41,7 @@
         </section>
         <section>
             <h2>Airports</h2>
-            <ul>
+            <ul data-checklist-id="hokkaido-airports">
                 <li>CTS</li>
                 <li>OKD</li>
                 <li>HKD</li>
