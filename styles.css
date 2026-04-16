@@ -41,6 +41,12 @@
     font-size: 0.8em;
     animation: planeSlide 2s ease-in-out forwards;
 }
+
+.flight-icon {
+    color: blue;
+    font-weight: bold;
+    font-size: 1em;
+}
 @keyframes planeSlide {
     0% {
         opacity: 0;
