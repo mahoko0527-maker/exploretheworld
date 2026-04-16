@@ -41,6 +41,9 @@
     width: 1em;
     height: 1em;
     color: blue;
+    text-indent: -9999px;
+    white-space: nowrap;
+    overflow: hidden;
     line-height: 1;
     vertical-align: -0.12em;
 }
@@ -50,9 +53,8 @@
     position: absolute;
     inset: 0;
     background: currentColor;
-    -webkit-clip-path: polygon(8% 54%, 100% 6%, 68% 100%, 53% 66%, 29% 82%, 36% 52%, 0 40%);
-    clip-path: polygon(8% 54%, 100% 6%, 68% 100%, 53% 66%, 29% 82%, 36% 52%, 0 40%);
-    transform: rotate(-18deg);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 13.5l8 1.8 6.4 6.2 2-1.6-3.5-7.3 6.6-5.9-1.6-2-8 3.6-3.2-5.8-2.3.8 1.1 6.3L1 11.5z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 13.5l8 1.8 6.4 6.2 2-1.6-3.5-7.3 6.6-5.9-1.6-2-8 3.6-3.2-5.8-2.3.8 1.1 6.3L1 11.5z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 #splash .flight-icon {
