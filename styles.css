@@ -35,17 +35,23 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
-.airplane {
+.flight-icon {
     display: inline-block;
+    color: blue;
+    font-weight: bold;
+    font-style: normal;
+    font-family: inherit;
+    line-height: 1;
+}
+
+.flight-icon::before {
+    content: '✈︎';
+}
+
+#splash .flight-icon {
     margin-left: 10px;
     font-size: 0.8em;
     animation: planeSlide 2s ease-in-out forwards;
-}
-
-.flight-icon {
-    color: blue;
-    font-weight: bold;
-    font-size: 1em;
 }
 @keyframes planeSlide {
     0% {
